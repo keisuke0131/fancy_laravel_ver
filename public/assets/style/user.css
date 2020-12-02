@@ -1,0 +1,190 @@
+.pc-wrap {
+  max-width: 100%;
+  margin: auto;
+}
+
+.flash {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  width: 100%;
+  height: 25px;
+  margin: auto;
+  padding: 3px 0;
+  background: #181a50;
+  color: white;
+  text-align: center;
+  animation: fadein-keyframes 2.3s ease-in 0s 1 forwards;
+}
+@keyframes fadein-keyframes {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.users-new-wrapper {
+  margin: auto;
+  background: #fdfdfd;
+}
+.users-new-wrapper img {
+  display: block;
+  width: 150px;
+  margin: auto;
+  padding: 40px 0 0 0;
+}
+.users-new-wrapper .users-new-container {
+  margin: 40px 0;
+}
+.users-new-wrapper .users-new-container form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1.25px solid #d4d4d4;
+  box-shadow: 1px 1px #e6e6e6;
+  background: white;
+  text-align: left;
+}
+.users-new-wrapper .users-new-container form .users-new-title {
+  padding: 5px 0;
+}
+.users-new-wrapper .users-new-container form .users-new-title h1 {
+  font-weight: 500;
+  font-size: 6vw;
+}
+@media screen and (min-width: 500px) {
+  .users-new-wrapper .users-new-container form .users-new-title h1 {
+    font-size: 33px;
+  }
+}
+.users-new-wrapper .users-new-container form a {
+  display: inline-block;
+  margin: 15px 0 0 0;
+  color: #0411c7;
+  font-size: 0.9em;
+  text-decoration: underline;
+}
+.users-new-wrapper .users-new-container form input {
+  height: 45px;
+  margin: 20px 0 0 0;
+  border-bottom: 1.5px solid #2e2e2e;
+}
+.users-new-wrapper .users-new-container form textarea {
+  height: 150px;
+  margin: 20px 0 0 0;
+  border-bottom: 1.5px solid #2e2e2e;
+}
+.users-new-wrapper .users-new-container form label {
+  margin: 25px 0 7px 0;
+  font-size: 4.3vw;
+}
+.users-new-wrapper .users-new-container form .users-new-title {
+  text-align: center;
+}
+.users-new-wrapper .users-new-container form #error_explanation .alert {
+  display: none;
+}
+.users-new-wrapper .users-new-container form #error_explanation ul {
+  padding: 20px;
+  border: 2px solid #680303;
+  background: #ff7d7d;
+  color: black;
+}
+.users-new-wrapper .users-new-container form #error_explanation ul li {
+  list-style: inside;
+}
+.users-new-wrapper .users-new-container form .label-first {
+  margin: 10px 0 7px 0;
+}
+.users-new-wrapper .users-new-container form input[type=submit] {
+  position: relative;
+  padding: 17px 35px;
+  transition: none;
+  -webkit-transition: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 0 #0c0386;
+  background: #16275e;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+}
+.users-new-wrapper .users-new-container form input[type=submit]:active {
+  top: 6px;
+  box-shadow: none;
+}
+.users-new-wrapper .users-new-btn {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  line-height: 30px;
+}
+.users-new-wrapper .users-new-btn a {
+  font-weight: 500;
+  font-size: 1.05em;
+  text-decoration: underline;
+  color: #16275e;
+}
+
+.users-index-wrapper {
+  max-width: 500px;
+  margin: 0 auto 50px auto;
+}
+.users-index-wrapper .users-index-container {
+  padding: 30px 10px;
+}
+.users-index-wrapper .users-index-container p {
+  padding: 5px 0;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+.users-index-wrapper .users-index-container .users {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1.5px solid #e2e0e0;
+}
+.users-index-wrapper .users-index-container .users h2 {
+  margin: 3px 0;
+  font-weight: 500;
+  font-size: 1.3em;
+}
+
+.users-setting-wrapper {
+  margin: auto;
+}
+.users-setting-wrapper .users-setting-container ul {
+  margin: 25px 0 0 0;
+  padding: 0 10px;
+}
+.users-setting-wrapper .users-setting-container ul a {
+  display: block;
+}
+.users-setting-wrapper .users-setting-container ul a:first-child {
+  border-top: 1px solid #a7a7a7;
+}
+.users-setting-wrapper .users-setting-container ul li {
+  position: relative;
+  padding: 15px 12px;
+  border-bottom: 1px solid #a7a7a7;
+  font-weight: 500;
+  font-size: 1.1em;
+}
+.users-setting-wrapper .users-setting-container ul li span {
+  position: absolute;
+  top: 8px;
+  right: 30px;
+  color: #a8a8a8;
+  font-size: 2.2em;
+}
+.users-setting-wrapper .users-setting-container ul .logout-btn {
+  color: #e61111;
+  font-weight: 600;
+}

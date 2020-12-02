@@ -1,0 +1,123 @@
+.thankx-wrapper {
+  margin: auto;
+}
+.thankx-wrapper .thanx-title {
+  text-align: center;
+}
+.thankx-wrapper .thanx-title h1 {
+  padding: 60px 20px;
+  font-weight: bold;
+  font-size: 8vw;
+}
+@media screen and (min-width: 500px) {
+  .thankx-wrapper .thanx-title h1 {
+    font-size: 40px;
+  }
+}
+.thankx-wrapper .thanx-content {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+  font-weight: 600;
+  font-size: 4vw;
+}
+@media screen and (min-width: 500px) {
+  .thankx-wrapper .thanx-content {
+    font-size: 20px;
+  }
+}
+.thankx-wrapper .home-button {
+  position: relative;
+  width: 170px;
+  margin: 60px auto;
+  padding: 17px 35px;
+  transition: none;
+  -webkit-transition: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 0 #0c0386;
+  background: #16275e;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+}
+.thankx-wrapper .home-button:active {
+  top: 6px;
+  box-shadow: none;
+}
+
+.privacy-policy-wrapper {
+  margin: 0 auto 150px auto;
+}
+.privacy-policy-wrapper .privacy-policy-container {
+  width: 90%;
+  margin: auto;
+}
+.privacy-policy-wrapper .privacy-policy-container a {
+  color: #2147c5;
+  text-decoration: underline;
+}
+.privacy-policy-wrapper .privacy-policy-container .privacy-policy-title {
+  text-align: center;
+}
+.privacy-policy-wrapper .privacy-policy-container .privacy-policy-title h1 {
+  padding: 35px 20px;
+  font-weight: bold;
+  font-size: 7.5vw;
+}
+@media screen and (min-width: 500px) {
+  .privacy-policy-wrapper .privacy-policy-container .privacy-policy-title h1 {
+    font-size: 40px;
+  }
+}
+.privacy-policy-wrapper .privacy-policy-container .privacy-policy-title p, .privacy-policy-wrapper .privacy-policy-container .privacy-policy-title a {
+  margin: 0 auto;
+  text-align: left;
+  font-weight: 600;
+  font-size: 4.8vw;
+}
+@media screen and (min-width: 500px) {
+  .privacy-policy-wrapper .privacy-policy-container .privacy-policy-title p, .privacy-policy-wrapper .privacy-policy-container .privacy-policy-title a {
+    font-size: 20px;
+  }
+}
+.privacy-policy-wrapper .privacy-policy-container .privacy-policy-section {
+  margin: 30px auto;
+  text-align: left;
+  font-weight: 600;
+  font-size: 4.5vw;
+}
+@media screen and (min-width: 500px) {
+  .privacy-policy-wrapper .privacy-policy-container .privacy-policy-section {
+    font-size: 20px;
+  }
+}
+
+.question-wrapper {
+  max-width: 500px;
+  margin: auto;
+}
+.question-wrapper .question-container {
+  text-align: center;
+}
+.question-wrapper .question-container .question-title h1 {
+  padding: 35px 20px;
+  font-weight: bold;
+  font-size: 7.5vw;
+}
+@media screen and (min-width: 500px) {
+  .question-wrapper .question-container .question-title h1 {
+    font-size: 40px;
+  }
+}
+.question-wrapper .question-container .question-title p, .question-wrapper .question-container .question-title a {
+  margin: 0 auto;
+  font-weight: 600;
+  font-size: 4.8vw;
+}
+@media screen and (min-width: 500px) {
+  .question-wrapper .question-container .question-title p, .question-wrapper .question-container .question-title a {
+    font-size: 20px;
+  }
+}
