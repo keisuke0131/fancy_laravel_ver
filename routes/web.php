@@ -12,5 +12,5 @@
 */
 
 Route::get('/', 'HomeController@top');
-Route::resource('posts', 'PostsController');
-Route::resource('users', 'PostsController');
+Route::resource('posts', 'PostController');
+Route::resource('users', 'UserController');
