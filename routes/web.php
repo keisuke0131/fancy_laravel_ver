@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@top');
+Route::resource('posts', 'PostsController');
+Route::resource('users', 'PostsController');
