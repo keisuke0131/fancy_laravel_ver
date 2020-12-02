@@ -9,20 +9,14 @@
       @foreach ($posts as $post)
         <div class="posts">
           <a href="#" class="post_show_btn">
-            {{-- <div class="posts-index-image">
-              <% if post.image.attached? %>
-                <%= image_tag post.image %>
-              <% else %>
-                <%= image_tag 'thumbnail.png' %>
-              <% end %> --}}
+            <div class="posts-index-image">
+              <img src="{{ asset('/assets/image/thumbnail.png') }}" alt="">
             </div>
-          </a>
-          <div class="posts-index-title">
-          <h2><a href="#">{{$post->title}}</a></h2>
-            {{-- <div id="like-btn-<%= post.id %>" class="like-btn">
-              <%= render 'likes/like', post: post %>
-            </div> --}}
           </div>
+          <div class="posts-index-title">
+            <h2><a href="#">{{$post->title}}</a></h2>
+          </div>
+        </a>
         </div>
       @endforeach
     </div>
