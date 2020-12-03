@@ -1,4 +1,3 @@
-{{-- layoutsフォルダのapplication.blade.phpを継承 --}}
 @extends('layouts.application')
 
 {{-- @yield('title')にテンプレートごとの値を代入 --}}
@@ -9,7 +8,7 @@
 <div class="users-new-wrapper">
   <img src="{{ asset('/assets/image/Fancy_logo_black.png') }}" alt="ロゴ">
   <div class="users-new-container">
-    <form action="{{ url('users') }}" method="post">
+    <form method="POST" action="{{ route('register') }}">
       {{ csrf_field() }}
       @method('POST')
     <div class="users-new-title">
@@ -21,7 +20,7 @@
       <input type="text" name="password" placeholder="パスワード" id="user_password" >
       <input type="text" name="password_confirmation" placeholder="パスワード（確認）" id="user_password_confirmation" >
       <input type="submit" name="submit" value="登録する" class="btn-square-shadow">
-  </form>
+    </form>
   </div>
   <div class="users-new-btn">
     <a href="{{ action('HomeController@top') }}">トップページ</a>

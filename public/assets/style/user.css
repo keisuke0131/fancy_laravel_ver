@@ -188,3 +188,25 @@
   color: #e61111;
   font-weight: 600;
 }
+
+/* Laravel 専用 START*/
+.users-new-btn > form{
+  display: inline-block !important;
+  padding:0 !important;
+  border:none !important;
+  text-align:center !important;
+}
+
+.users-new-btn form input[type="submit"].delete-btn{
+  display: inline !important;
+  padding:0 !important;
+  border:none !important;
+  box-shadow: none;
+  background:none !important;
+  color:black !important;
+  font-weight: 400;
+  font-size:1em;
+  text-decoration:underline ;
+}
+
+/* Laravel 専用 END*/

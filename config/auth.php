@@ -101,6 +101,11 @@ return [
         ],
     ],
 
+    'shop' => [
+        'driver' => 'session',
+        'provider' => 'shops',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Password Confirmation Timeout

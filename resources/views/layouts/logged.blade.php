@@ -1,10 +1,7 @@
-{{-- layoutsフォルダのapplication.blade.phpを継承 --}}
 @extends('layouts.application')
 
-{{-- @yield('title')にテンプレートごとの値を代入 --}}
 @section('title', ' ')
 
-{{-- application.blade.phpの@yield('content')に以下のレイアウトを代入 --}}
 @section('content')
 <div class="pc-wrap">
   <header class="logged">
@@ -16,7 +13,7 @@
   <nav class="bottom-nav">
     <ul>
       <li>
-        <a href="#">
+        <a href="{{ action('PostController@index') }}">
           <span class="material-icons">home</span>
           <p>ホーム</p>
         </a>
@@ -28,13 +25,13 @@
         </a> 
       </li>
         <li>
-          <a href="#">
+          <a href="{{ action('UserController@admin') }}">
             <span class="material-icons">settings</span>
             <p>管理画面</p>
           </a>
         </li>
       <li>
-        <a href="#">
+        <a href="{{ action('UserController@setting') }}">
           <span class="material-icons">app_settings_alt</span>
           <p>設定</p>
         </a>

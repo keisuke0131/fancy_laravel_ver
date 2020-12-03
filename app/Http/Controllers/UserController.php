@@ -36,12 +36,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $user = new User;
+        $rules = [
+            'name' => ['required','max:255'],
+            'email' => ['required','email','unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed']
+        ];
+        
+        $this->validate($request, $rules);
+        
+        $user = User::create();
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = $request->password;
         $user->save();
-        return redirect('users/'.$user->id);
+        return redirect('posts/');
     }
 
     /**
@@ -87,5 +95,15 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function admin()
+    {
+        return view('users.admin');
+    }
+
+    public function setting()
+    {
+        return view('users.setting');
     }
 }

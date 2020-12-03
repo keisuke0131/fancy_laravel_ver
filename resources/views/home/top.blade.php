@@ -12,12 +12,7 @@
   </div>
   <nav class="header-nav">
     <ul>
-      <li><a href="#">ログイン</a></li>
-      {{-- <% if !logged_in? %>
-        <li><%= link_to "ログイン" , login_path%></li>
-      <% else %>
-        <li><%= link_to "ログアウト" , logout_path , method: :delete %></li>
-      <% end %> --}}
+      <li><a href=" {{ url('login/') }} ">ログイン</a></li>}
     </ul>
   </nav>
 </header>
@@ -26,13 +21,17 @@
     <img src="{{ asset('/assets/image/lp.png') }}" alt="ロゴ">
     <div class="top-container">
     <div class="balloon">今なら月額料金が無料！</div>
-      <button class="btn-square-shadow">新規登録はこちら！</button>
+      <button class="btn-square-shadow">
+        <a href="{{ url('register/') }}">
+          新規登録はこちら！
+        </a>
+      </button>
     </div>
   </div>
   
   <div class="about-wrapper first">
     <div class="about-container">
-      <div class="about-title">
+      <div class="about-title"> 
         <h2>彼女ができない理由は明白</h2>
       </div>
         <p>あなたにいつまで経っても彼女ができない理由は明白です。</p>
@@ -50,7 +49,11 @@
     </div>
     <div class="btn-container">
       <div class="balloon">今なら月額料金が無料！</div>
-        <button class="btn-square-shadow">新規登録はこちら！</button>
+        <button class="btn-square-shadow">
+          <a href="{{ url('register/') }}">
+            新規登録はこちら！
+          </a>
+        </button>
     </div>
   </div>
 
@@ -95,7 +98,11 @@
 
     <div class="btn-container">
       <div class="balloon">今なら月額料金が無料！</div>
-        <button class="btn-square-shadow">新規登録はこちら！</button>
+      <button class="btn-square-shadow">
+        <a href="{{ url('register/') }}">
+          新規登録はこちら！
+        </a>
+      </button>
     </div>
   </div>
     

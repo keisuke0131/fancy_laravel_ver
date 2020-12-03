@@ -8,11 +8,10 @@
     <div class="posts-index-container">
       @foreach ($posts as $post)
         <div class="posts">
-          <a href="#" class="post_show_btn">
+          <a href="{{ url('posts/'.$post->id) }}" class="post_show_btn">
             <div class="posts-index-image">
               <img src="{{ asset('/assets/image/thumbnail.png') }}" alt="">
             </div>
-          </div>
           <div class="posts-index-title">
             <h2><a href="#">{{$post->title}}</a></h2>
           </div>

@@ -12,5 +12,8 @@
 */
 
 Route::get('/', 'HomeController@top');
-Route::resource('posts', 'PostController');
-Route::resource('users', 'UserController');
+Route::get('/admin', 'UserController@admin');
+Route::get('/setting', 'UserController@setting');
+Route::resource('/posts', 'PostController');
+Route::resource('/users', 'UserController');
+Auth::routes();
