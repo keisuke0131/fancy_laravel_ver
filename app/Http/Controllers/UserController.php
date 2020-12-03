@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth; 
 
 class UserController extends Controller
 {
@@ -15,7 +16,12 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('users.index', ['users' => $users]);
+
+        if(Auth::user()->admin){
+            return view('users.index', ['users' => $users]);
+        }else{
+            return redirect('posts/');
+        }
     }
 
     /**
@@ -25,7 +31,11 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        if(Auth::user()->admin){
+            return view('users.create');
+        }else{
+            return redirect('posts/');
+        }
     }
 
     /**
@@ -99,7 +109,12 @@ class UserController extends Controller
 
     public function admin()
     {
-        return view('users.admin');
+        if(Auth::user()->admin){
+            return view('users.admin');
+        }else{
+            return redirect('posts/');
+        }
+        
     }
 
     public function setting()
