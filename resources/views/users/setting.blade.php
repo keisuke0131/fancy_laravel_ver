@@ -24,7 +24,7 @@
           <span class="material-icons">navigate_next</span>
         </li>
       </a>
-      <a href="#">
+      <a href="">
         <li>
           特商法表記
           <span class="material-icons">navigate_next</span>
