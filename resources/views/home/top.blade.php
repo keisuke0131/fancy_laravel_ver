@@ -12,7 +12,7 @@
   </div>
   <nav class="header-nav">
     <ul>
-      <li><a href=" {{ url('login/') }} ">ログイン</a></li>}
+      <li><a href=" {{ url('login/') }} ">ログイン</a></li>
     </ul>
   </nav>
 </header>
