@@ -7,7 +7,7 @@
 @section('main')
 <div class="users-new-wrapper">
   <div class="users-new-container">
-    <form action="{{ url('posts') }}" method="post">
+    <form action="{{ url('posts') }}" method="post" enctype="multipart/form-data">
       {{ csrf_field() }}
       @method('POST')
     <div class="users-new-title">
@@ -15,6 +15,7 @@
     </div>
       {{-- <%= render 'shared/error_messages' %> --}}
       <input type="text" name="title" placeholder="タイトル" id="user_name" >
+      <input type="file" name="image">
       <textarea name="content" placeholder="コンテンツ" id="post_content"></textarea>
       <input type="submit" name="submit" value="登録する" class="btn-square-shadow">
   </form>
