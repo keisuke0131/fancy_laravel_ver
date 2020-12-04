@@ -195,6 +195,7 @@
   padding:0 !important;
   border:none !important;
   text-align:center !important;
+  box-shadow: none !important;
 }
 
 .users-new-btn form input[type="submit"].delete-btn{

@@ -16,7 +16,11 @@
       <span class="material-icons">create</span>
     </a>
   
-    <img src="{{ asset('/assets/image/thumbnail.png') }}" alt="">
+    @if ($post->image_path)
+      <img src="{{ $post->image_path }}">
+    @else  
+      <img src="{{ asset('/assets/image/thumbnail.png') }}" alt="">
+    @endif 
   
     <h1>{{$post->title}}</h1>
   </div>

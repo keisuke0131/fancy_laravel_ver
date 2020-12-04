@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth; 
 
 class HomeController extends Controller
 {
@@ -22,7 +23,11 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function top()
-    {
-        return view('home.top');
+    {   
+        if(Auth::user()){
+            return redirect('posts/');
+        }else{
+            return view('home.top');
+        }
     }
 }
