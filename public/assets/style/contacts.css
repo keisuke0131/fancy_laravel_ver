@@ -121,3 +121,43 @@
     font-size: 20px;
   }
 }
+
+.contact-confirm{
+ display: flex; 
+ margin: 0 0 20px 0;
+}
+
+.contact-confirm label{
+  /* font-size:0.75em !important; */
+  margin:0 !important;
+}
+
+@media screen and (min-width: 500px) {
+  .contact-confirm label{
+    font-size: 40px !important;
+  }
+}
+
+.column{
+  flex-direction: column;
+}
+
+button.btn-square {
+  display: inline-block;
+  margin:0 15px 0 0 ;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #16275e;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #0c0386;
+  border-radius: 3px;
+}
+button.btn-square:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+.contact-confirm-button{
+
+}

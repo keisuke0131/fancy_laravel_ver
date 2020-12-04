@@ -36,7 +36,7 @@
           <span class="material-icons">navigate_next</span>
         </li>
       </a>
-      <a href="#">
+      <a href="{{ action('ContactController@index') }}">
         <li>
           お問い合わせ
           <span class="material-icons">navigate_next</span>

@@ -10,6 +10,7 @@
   <link href="{{ asset('assets/style/home.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/style/user.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/style/post.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/style/contacts.css') }}" rel="stylesheet">
   <title>@yield('title')</title>
 </head>
 <body>
