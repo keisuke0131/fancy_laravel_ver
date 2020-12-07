@@ -9,6 +9,13 @@
       <img src="{{ asset('/assets/image/Fancy_logo_black.png') }}" alt="ロゴ">
     </div>
   </header>
+
+  @if (session('flash_message'))
+      <div class="flash">
+          {{ session('flash_message') }}
+      </div>
+  @endif
+
   @yield('main')
   <nav class="bottom-nav">
     <ul>

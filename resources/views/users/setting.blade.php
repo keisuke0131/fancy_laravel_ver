@@ -4,33 +4,27 @@
 <div class="users-setting-wrapper">
   <div class="users-setting-container">
     <ul>
-      <a href="#">
+      <a href="{{ action('ChangeEmailController@edit') }}">
         <li>
           メールアドレス変更
           <span class="material-icons">navigate_next</span>
         </li>
       </a>
-      <a href="#">
+      <a href="{{ action('ChangePasswordController@edit') }}">
         <li>
           パスワード変更
           <span class="material-icons">navigate_next</span>
-        </li>
+        </li> 
       </a>
     </ul>
     <ul>
-      <a href="#">
+      <a href="{{ action('ContactController@privacy_policy') }}">
         <li>
           プライバシーポリシー
           <span class="material-icons">navigate_next</span>
         </li>
       </a>
-      <a href="">
-        <li>
-          特商法表記
-          <span class="material-icons">navigate_next</span>
-        </li>
-      </a>
-      <a href="#">
+      <a href="{{ action('ContactController@question') }}">
         <li>
           よくあるご質問
           <span class="material-icons">navigate_next</span>

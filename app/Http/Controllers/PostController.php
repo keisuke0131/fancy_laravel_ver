@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Like;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth; 
+
 
 class PostController extends Controller
 {
@@ -21,8 +24,14 @@ class PostController extends Controller
 
     public function index()
     {
-        $posts = Post::all();
-        return view('posts.index', ['posts' => $posts]);
+        $posts = Post::orderBy('id', 'desc')->get();
+        $like_model = new Like;
+        $data = [
+            'posts' => $posts,
+            'like_model'=>$like_model,
+        ];
+        
+        return view('posts.index', $data);
     }
 
     /**
@@ -57,7 +66,7 @@ class PostController extends Controller
         $path = Storage::disk('s3')->putFile('/', $image, 'public');
         $post->image_path = Storage::disk('s3')->url($path);
         $post->save();
-        return redirect()->to('/posts');
+        return redirect('/posts')->with('flash_message', '投稿が完了しました');
     }
 
     /**
@@ -79,7 +88,10 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('posts.edit', ['post' => $post]);
+        return view('posts.edit', ['post' => $post])->with([
+            'defaultTitle' => $post->title,
+            'defaultContent' => $post->content,
+        ]);
     }
 
     /**
@@ -97,7 +109,7 @@ class PostController extends Controller
         $path = Storage::disk('s3')->putFile('/', $image, 'public');
         $post->image_path = Storage::disk('s3')->url($path);
         $post->save();
-        return redirect()->to('/posts');
+        return redirect('/posts')->with('flash_message', '投稿が編集されました');
     }
 
     /**
@@ -109,6 +121,50 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
-        return redirect('posts');
+        return redirect('posts')->with('flash_message', '投稿が削除されました');
+    }
+
+    public function ajaxlike(Request $request)
+    {
+        $id = Auth::user()->id;
+        $post_id = $request->post_id;
+        $like = new Like;
+        $post = Post::findOrFail($post_id);
+        //loadCountとすればリレーションの数を○○_countという形で取得できる（今回の場合はいいねの総数）
+        $postLikesCount = $post->loadCount('likes')->likes_count;
+
+        // 空でない（既にいいねしている）なら
+        if ($like->like_exist($id, $post_id)) {
+            //likesテーブルのレコードを削除
+            $like = Like::where('post_id', $post_id)->where('user_id', $id)->delete();
+        } else {
+            //空（まだ「いいね」していない）ならlikesテーブルに新しいレコードを作成する
+            $like = new Like;
+            $like->post_id = $request->post_id;
+            $like->user_id = Auth::user()->id;
+            $like->save();
+        }
+
+        //一つの変数にajaxに渡す値をまとめる
+        //今回ぐらい少ない時は別にまとめなくてもいいけど一応。笑
+        $json = [
+            'postLikesCount' => $postLikesCount,
+        ];
+        //下記の記述でajaxに引数の値を返す
+        return response()->json($json);
+    }
+
+    public function like()
+    {
+        $posts = Post::orderBy('id', 'desc')->get();
+        $like_model = new Like;
+        $id = Auth::user()->id;
+        $data = [
+            'posts' => $posts,
+            'like_model'=>$like_model,
+            'id' =>$id
+        ];
+        
+        return view('posts.like', $data);
     }
 }

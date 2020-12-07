@@ -1,7 +1,5 @@
-{{-- layoutsフォルダのapplication.blade.phpを継承 --}}
 @extends('layouts.logged')
 
-{{-- @yield('title')にテンプレートごとの値を代入 --}}
 @section('title', ' ')
 
 @section('main')
@@ -14,9 +12,9 @@
         <h1>投稿編集</h1>
       </div>
       {{-- <%= render 'shared/error_messages' %> --}}
-      <input type="text" name="title" placeholder="タイトル" id="user_name" >
+      <input type="text" name="title" placeholder="タイトル" id="user_name" value="{{ old('title', isset($defaultTitle) ? $defaultTitle : '') }}">      
       <input type="file" name="image">
-      <textarea name="content" placeholder="コンテンツ" id="post_content"></textarea>
+      <textarea name="content" placeholder="コンテンツ" id="post_content">{{ old('content', isset($defaultContent) ? $defaultContent : '') }}</textarea>
       <input type="submit" name="submit" value="編集する" class="btn-square-shadow">
     </form>
     <div class="users-new-btn">

@@ -1,7 +1,5 @@
-{{-- layoutsフォルダのapplication.blade.phpを継承 --}}
 @extends('layouts.logged')
 
-{{-- application.blade.phpの@yield('content')に以下のレイアウトを代入 --}}
 @section('main')
 <div class="pc-wrap">
   <div class="users-index-wrapper">

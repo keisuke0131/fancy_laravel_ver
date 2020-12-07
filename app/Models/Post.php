@@ -8,4 +8,9 @@ class Post extends Model
 {
     protected $table = 'posts';
     protected $guarded = array('id');
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
 }

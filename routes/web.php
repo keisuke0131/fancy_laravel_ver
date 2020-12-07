@@ -12,11 +12,27 @@
 */
 
 Route::get('/', 'HomeController@top');
+
+Route::resource('/users', 'UserController');
 Route::get('/admin', 'UserController@admin');
 Route::get('/setting', 'UserController@setting');
+
 Route::resource('/posts', 'PostController');
-Route::resource('/users', 'UserController');
+Route::get('/likes', 'PostController@like')->name('posts.like');
+
 Auth::routes();
+
 Route::get('/contact', 'ContactController@index')->name('contact.index');
 Route::post('/contact/confirm', 'ContactController@confirm')->name('contact.confirm');
 Route::post('/contact/thanks', 'ContactController@send')->name('contact.send');
+Route::get('/privacy_policy', 'ContactController@privacy_policy')->name('contact.privacy_policy');
+Route::get('/question', 'ContactController@question')->name('contact.question');
+
+Route::group(['middleware' => ['auth']], function () {
+  Route::post('ajaxlike', 'PostController@ajaxlike')->name('posts.ajaxlike');
+});
+
+Route::get('/change_email_edit', 'ChangeEmailController@edit')->name('change_email.edit');
+Route::put('/change_email_update', 'ChangeEmailController@update')->name('change_email.update');
+Route::get('/change_password_edit', 'ChangePasswordController@edit')->name('change_password.edit');
+Route::put('/change_password_update', 'ChangePasswordController@update')->name('change_password.update');

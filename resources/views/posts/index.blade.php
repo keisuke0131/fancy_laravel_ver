@@ -18,6 +18,13 @@
             </div>
           <div class="posts-index-title">
             <h2><a href="#">{{$post->title}}</a></h2>
+            <div class="like-btn">
+              @if($like_model->like_exist(Auth::user()->id,$post->id))
+              <a class="js-like-toggle loved" href="" data-postid="{{ $post->id }}"><span class="material-icons">star</span></i></a>
+              @else
+              <a class="js-like-toggle" href="" data-postid="{{ $post->id }}"><span class="material-icons">star_border</span></a>
+              @endif​
+            </div>
           </div>
         </a>
         </div>
