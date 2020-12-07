@@ -26,7 +26,7 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="{{ action('PostController@like') }}">
           <span class="material-icons">star</span>
           <p>お気に入り</p>
         </a> 
