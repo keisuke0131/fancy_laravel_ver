@@ -11,7 +11,6 @@
       <div class="users-new-title">
         <h1>メールアドレス変更</h1>
       </div>
-      {{-- <%= render 'shared/error_messages' %> --}}
       <input type="text" name="current_email" placeholder="現在のメールアドレス" id="user_email" >
       <input type="text" name="new_email" placeholder="新しいメールアドレス" id="user_email" >
       <input type="text" name="password" placeholder="パスワード" id="user_password" >

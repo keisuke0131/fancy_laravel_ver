@@ -20,13 +20,3 @@
   @yield('content')
 </body>
 </html>
-
-{{-- <link href="{{ asset('assets/style/all-reset.css') }}" rel="stylesheet">
-<link href="{{ asset('assets/style/home.css') }}" rel="stylesheet">
-<link href="{{ asset('assets/style/user.css') }}" rel="stylesheet">
-<link href="{{ asset('assets/style/post.css') }}" rel="stylesheet">
-
-<link href="{{ mix('assets/style/all-reset.css') }}" rel="stylesheet">
-<link href="{{ mix('assets/style/home.css') }}" rel="stylesheet">
-<link href="{{ mix('assets/style/user.css') }}" rel="stylesheet">
-<link href="{{ mix('assets/style/post.css') }}" rel="stylesheet"> --}}

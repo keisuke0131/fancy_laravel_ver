@@ -1,7 +1,5 @@
-{{-- layoutsフォルダのapplication.blade.phpを継承 --}}
 @extends('layouts.logged')
 
-{{-- @yield('title')にテンプレートごとの値を代入 --}}
 @section('title', ' ')
 
 @section('main')

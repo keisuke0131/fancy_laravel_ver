@@ -11,7 +11,6 @@
       <div class="users-new-title">
         <h1>パスワード変更</h1>
       </div>
-      {{-- <%= render 'shared/error_messages' %> --}}
       <input type="text" name="email" placeholder="メールアドレス" >
       <input type="text" name="current_password" placeholder="現在のパスワード">
       <input type="text" name="password" placeholder="新しいパスワード">

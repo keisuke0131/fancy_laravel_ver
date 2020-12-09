@@ -19,17 +19,14 @@ class ContactController extends Controller
 
     public function confirm(Request $request)
     {
-        //バリデーション
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
             'content'  => 'required',
         ]);
         
-        //フォームから受け取ったすべてのinputの値を取得
         $inputs = $request->all();
 
-        //入力内容確認ページのviewに変数を渡して表示
         return view('contact.confirm', [
             'inputs' => $inputs,
         ]);
@@ -46,14 +43,11 @@ class ContactController extends Controller
                 ->withInput($inputs);
 
         } else {
-            //入力されたメールアドレスにメールを送信
             \Mail::to($inputs['email'])->send(new ContactSendmail($inputs));
             \Mail::to('gottue_kanzi0131@yahoo.co.jp')->send(new ContactSendmail($inputs));
 
-            //再送信を防ぐためにトークンを再発行
             $request->session()->regenerateToken();
 
-            //送信完了ページのviewを表示
             return view('contact.thanks');
             
         }
