@@ -12,9 +12,11 @@
       <span class="material-icons">navigate_before</span>
     </a>
     
-    <a href="{{ action('PostController@edit', $post->id) }}" class="right">
-      <span class="material-icons">create</span>
-    </a>
+    @if (Auth::user()->admin)
+      <a href="{{ action('PostController@edit', $post->id) }}" class="right">
+        <span class="material-icons">create</span>
+      </a>
+    @endif
   
     @if ($post->image_path)
       <img src="{{ $post->image_path }}">
