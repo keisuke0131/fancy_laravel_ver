@@ -14,13 +14,15 @@
 Route::get('/', 'HomeController@top');
 
 Route::resource('/users', 'UserController');
-Route::get('/admin', 'UserController@admin');
-Route::get('/setting', 'UserController@setting');
 
-Route::resource('/posts', 'PostController');
-Route::get('/likes', 'PostController@like')->name('posts.like');
+Auth::routes(['verify' => true]);
 
-Auth::routes();
+Route::middleware('verified')->group(function() {
+  Route::get('/admin', 'UserController@admin');
+  Route::get('/setting', 'UserController@setting');
+  Route::resource('/posts', 'PostController');
+  Route::get('/likes', 'PostController@like')->name('posts.like');
+});
 
 Route::get('/contact', 'ContactController@index')->name('contact.index');
 Route::post('/contact/confirm', 'ContactController@confirm')->name('contact.confirm');

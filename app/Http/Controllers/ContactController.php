@@ -7,6 +7,11 @@ use App\Mail\ContactSendmail;
 
 class ContactController extends Controller
 {
+    public function __construct()
+    {        
+        $this->middleware('verified');
+    }
+    
     public function index()
     {
         return view('contact.index');

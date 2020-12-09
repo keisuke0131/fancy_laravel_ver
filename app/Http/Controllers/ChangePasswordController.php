@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Hash;
 
 class ChangePasswordController extends Controller
 {
+    public function __construct()
+    {        
+        $this->middleware('verified');
+    }
+    
     public function edit()
     {
         $user = User::find(Auth::user()->id);
