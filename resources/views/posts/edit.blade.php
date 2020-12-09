@@ -5,13 +5,12 @@
 @section('main')
 <div class="users-new-wrapper">
   <div class="users-new-container">
-    <form action="{{ route('posts.update', ['post' => $post ]) }}" method="post">
+    <form action="{{ route('posts.update', ['post' => $post ]) }}" method="post" enctype="multipart/form-data"> 
       @method('PUT')
       {{ csrf_field() }}
       <div class="users-new-title">
         <h1>投稿編集</h1>
       </div>
-      {{-- <%= render 'shared/error_messages' %> --}}
       <input type="text" name="title" placeholder="タイトル" id="user_name" value="{{ old('title', isset($defaultTitle) ? $defaultTitle : '') }}">      
       <input type="file" name="image">
       <textarea name="content" placeholder="コンテンツ" id="post_content">{{ old('content', isset($defaultContent) ? $defaultContent : '') }}</textarea>

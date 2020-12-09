@@ -13,7 +13,6 @@
     <div class="users-new-title">
       <h1>新規投稿</h1>
     </div>
-      {{-- <%= render 'shared/error_messages' %> --}}
       <input type="text" name="title" placeholder="タイトル" id="user_name" >
       <input type="file" name="image">
       <textarea name="content" placeholder="コンテンツ" id="post_content"></textarea>

@@ -106,8 +106,10 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->content = $request->content;
         $image = $request->file('image');
-        $path = Storage::disk('s3')->putFile('/', $image, 'public');
-        $post->image_path = Storage::disk('s3')->url($path);
+        if($image != NULL){
+            $path = Storage::disk('s3')->putFile('/', $image,'public');
+            $post->image_path = Storage::disk('s3')->url($path);
+        }
         $post->save();
         return redirect('/posts')->with('flash_message', '投稿が編集されました');
     }
