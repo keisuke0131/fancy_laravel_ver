@@ -17,8 +17,8 @@
       {{-- <%= render 'shared/error_messages' %> --}}
       <input type="text" name="name" placeholder="氏名" id="user_name" >
       <input type="text" name="email" placeholder="メールアドレス" id="user_email" >
-      <input type="text" name="password" placeholder="パスワード" id="user_password" >
-      <input type="text" name="password_confirmation" placeholder="パスワード（確認）" id="user_password_confirmation" >
+      <input type="password" name="password" placeholder="パスワード" id="user_password" >
+      <input type="password" name="password_confirmation" placeholder="パスワード（確認）" id="user_password_confirmation" >
       <input type="submit" name="submit" value="登録する" class="btn-square-shadow">
     </form>
   </div>
